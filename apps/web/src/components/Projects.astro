@@ -1,0 +1,104 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section
+  id="projects"
+  class="relative bg-[#050505] px-6 py-32 lg:px-8 lg:py-48"
+>
+  <div class="mx-auto max-w-7xl">
+
+    <!-- Header -->
+    <div
+      class="mb-20 flex flex-col justify-between gap-8 lg:mb-28 lg:flex-row lg:items-end"
+    >
+
+      <div>
+        <p class="text-[9px] uppercase tracking-[0.3em] text-neutral-700">
+          01 / Selected work
+        </p>
+
+        <h2
+          class="mt-8 text-[clamp(4rem,9vw,9rem)] font-medium leading-[0.8] tracking-[-0.08em] text-white"
+        >
+          Projects<span class="text-neutral-700">.</span>
+        </h2>
+      </div>
+
+      <p class="max-w-xs text-sm leading-6 text-neutral-600">
+        A selection of digital products,
+        interfaces and full-stack experiences.
+      </p>
+
+    </div>
+
+
+    <!-- List header -->
+    <div
+      class="hidden border-y border-neutral-900 py-4 lg:grid lg:grid-cols-[80px_1fr_220px_100px_40px]"
+    >
+      <span class="text-[8px] uppercase tracking-[0.25em] text-neutral-800">
+        No.
+      </span>
+
+      <span class="text-[8px] uppercase tracking-[0.25em] text-neutral-800">
+        Project
+      </span>
+
+      <span class="text-[8px] uppercase tracking-[0.25em] text-neutral-800">
+        Type
+      </span>
+
+      <span class="text-right text-[8px] uppercase tracking-[0.25em] text-neutral-800">
+        Year
+      </span>
+
+      <span></span>
+    </div>
+
+
+    <!-- Projects -->
+    <div>
+
+      <ProjectCard
+        number="01"
+        title="Project One"
+        category="Web Application"
+        year="2026"
+        tags={["Frontend", "Full Stack", "UI"]}
+      />
+
+      <ProjectCard
+        number="02"
+        title="Project Two"
+        category="Digital Experience"
+        year="2026"
+        tags={["UI", "Animation", "Web"]}
+      />
+
+      <ProjectCard
+        number="03"
+        title="Project Three"
+        category="Full Stack Product"
+        year="2026"
+        tags={["API", "Database", "Backend"]}
+      />
+
+    </div>
+
+
+    <!-- Bottom -->
+    <div
+      class="mt-8 flex items-center justify-between border-t border-neutral-900 pt-5"
+    >
+      <span class="text-[8px] uppercase tracking-[0.3em] text-neutral-800">
+        Selected projects
+      </span>
+
+      <span class="text-[8px] uppercase tracking-[0.3em] text-neutral-800">
+        03 / 03
+      </span>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,156 @@
+<section class="relative min-h-screen overflow-hidden bg-[#050505] px-6 text-white lg:px-8">
+
+  <!-- Decorative grid -->
+  <div
+    class="pointer-events-none absolute inset-0 opacity-[0.035]"
+    style="background-image: linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px); background-size: 80px 80px;"
+  ></div>
+
+  <!-- Ambient glow -->
+  <div
+    class="pointer-events-none absolute left-[55%] top-[45%] h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-lime-400/[0.035] blur-[140px]"
+  ></div>
+
+  <div class="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-between pb-8 pt-32">
+
+    <!-- Top information -->
+    <div class="flex items-start justify-between">
+
+      <div class="flex items-center gap-3">
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime-400 opacity-50"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-lime-400"></span>
+        </span>
+
+        <span class="text-[9px] uppercase tracking-[0.3em] text-neutral-600">
+          Available for work
+        </span>
+      </div>
+
+      <span class="hidden text-[9px] uppercase tracking-[0.3em] text-neutral-700 sm:block">
+        2026 — Portfolio
+      </span>
+
+    </div>
+
+
+    <!-- Main title -->
+    <div class="my-auto py-24">
+
+      <p
+        class="mb-8 translate-y-4 text-[10px] uppercase tracking-[0.35em] text-neutral-600 opacity-0 animate-[fadeUp_0.8s_ease-out_0.1s_forwards]"
+      >
+        Full Stack Developer / Frontend & UI
+      </p>
+
+      <h1
+        class="select-none text-[clamp(4.5rem,14vw,13rem)] font-medium leading-[0.76] tracking-[-0.09em]"
+      >
+        <span
+          class="block translate-y-8 opacity-0 animate-[fadeUp_0.9s_ease-out_0.2s_forwards]"
+        >
+          Rubén
+        </span>
+
+        <span
+          class="ml-[8vw] block translate-y-8 text-neutral-600 opacity-0 animate-[fadeUp_0.9s_ease-out_0.35s_forwards] sm:ml-[10vw]"
+        >
+          Lora Martín.
+        </span>
+      </h1>
+
+
+      <!-- Description -->
+      <div class="mt-16 grid gap-10 sm:grid-cols-2 sm:items-end">
+
+        <p
+          class="max-w-md translate-y-4 text-sm leading-7 text-neutral-500 opacity-0 animate-[fadeUp_0.8s_ease-out_0.55s_forwards] sm:text-base"
+        >
+          I design and build digital experiences,
+          interfaces and full-stack products with
+          a focus on detail, performance and simplicity.
+        </p>
+
+        <div
+          class="flex translate-y-4 justify-start opacity-0 animate-[fadeUp_0.8s_ease-out_0.7s_forwards] sm:justify-end"
+        >
+          <a
+            href="#projects"
+            class="group flex items-center gap-5"
+          >
+            <span class="text-[10px] uppercase tracking-[0.25em] text-neutral-500 transition-colors duration-300 group-hover:text-white">
+              Explore selected work
+            </span>
+
+            <span
+              class="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-800 text-lg text-neutral-500 transition-all duration-500 group-hover:border-lime-400 group-hover:bg-lime-400 group-hover:text-black"
+            >
+              ↘
+            </span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Bottom information -->
+    <div class="flex items-end justify-between">
+
+      <div class="hidden items-center gap-4 sm:flex">
+        <span class="h-px w-10 bg-neutral-800"></span>
+
+        <span class="text-[9px] uppercase tracking-[0.3em] text-neutral-700">
+          Frontend / UI
+        </span>
+
+        <span class="text-neutral-800">+</span>
+
+        <span class="text-[9px] uppercase tracking-[0.3em] text-neutral-700">
+          Full Stack
+        </span>
+      </div>
+
+
+      <div class="ml-auto flex flex-col items-end gap-2">
+
+        <span class="text-[9px] uppercase tracking-[0.3em] text-neutral-700">
+          Scroll to explore
+        </span>
+
+        <span class="text-neutral-600 animate-bounce">
+          ↓
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Vertical side label -->
+  <div class="absolute bottom-32 left-3 hidden -rotate-90 origin-left lg:block">
+    <span class="text-[8px] uppercase tracking-[0.4em] text-neutral-800">
+      RLM / Digital Craft
+    </span>
+  </div>
+
+
+  <!-- Animation -->
+  <style>
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(32px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+</section>
