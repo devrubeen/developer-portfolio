@@ -1,102 +1,107 @@
+
 ---
 import ProjectCard from "./ProjectCard.astro";
+
+const projects = [
+  {
+    number: "01",
+    title: "AI Workspace",
+    category: "Full Stack / AI",
+    year: "2026",
+    tags: ["Next.js", "NestJS", "Supabase", "AI"],
+    description:
+      "An intelligent productivity platform designed to turn documents, text and images into actionable tasks using AI. Featuring collaborative workspaces, project management and a scalable full-stack architecture.",
+    status: "In development",
+    visual: "workspace" as const,
+  },
+  {
+    number: "02",
+    title: "PacoSystem v50.0",
+    category: "Creative Development",
+    year: "2026",
+    tags: ["Astro", "Tailwind CSS", "JavaScript", "GSAP", "Supabase"],
+    description:
+      "An interactive birthday experience combining animations, storytelling, a real-time multiplayer quiz and a surprise reveal.",
+    status: "Personal project",
+    visual: "experience" as const,
+  },
+  {
+    number: "03",
+    title: "Developer Portfolio",
+    category: "Frontend / UI",
+    year: "2026",
+    tags: ["Astro", "TypeScript", "Tailwind CSS", "Turborepo"],
+    description:
+      "My personal portfolio, built to showcase my development journey, technical projects and passion for creating polished digital interfaces.",
+    status: "In development",
+    visual: "portfolio" as const,
+  },
+];
 ---
 
 <section
   id="projects"
-  class="relative bg-[#050505] px-6 py-32 lg:px-8 lg:py-48"
+  class="relative overflow-hidden border-t border-[var(--border-color)] bg-[var(--background)] px-6 py-28 lg:px-8 lg:py-36"
 >
-  <div class="mx-auto max-w-7xl">
+  <div
+    class="pointer-events-none absolute -right-64 top-0 h-[500px] w-[500px] rounded-full bg-violet-500/[0.07] blur-[120px]"
+  ></div>
 
-    <!-- Header -->
-    <div
-      class="mb-20 flex flex-col justify-between gap-8 lg:mb-28 lg:flex-row lg:items-end"
-    >
+  <div class="relative mx-auto max-w-7xl">
 
+    <!-- Section heading -->
+    <div class="mb-12 flex flex-col justify-between gap-8 lg:mb-16 lg:flex-row lg:items-end">
       <div>
-        <p class="text-[9px] uppercase tracking-[0.3em] text-neutral-700">
-          01 / Selected work
-        </p>
+        <div class="mb-6 flex items-center gap-3">
+          <span class="h-px w-8 bg-violet-500"></span>
+          <span class="text-xs font-semibold uppercase tracking-[0.25em] text-violet-500">
+            Portfolio / Selected Work
+          </span>
+        </div>
 
-        <h2
-          class="mt-8 text-[clamp(4rem,9vw,9rem)] font-medium leading-[0.8] tracking-[-0.08em] text-white"
-        >
-          Projects<span class="text-neutral-700">.</span>
+        <h2 class="text-[clamp(3.5rem,7vw,7rem)] font-extrabold leading-[1.05] tracking-[-0.075em]">
+          Featured
+          <span class="block">
+            Projects<span class="text-violet-500">.</span>
+          </span>
         </h2>
       </div>
 
-      <p class="max-w-xs text-sm leading-6 text-neutral-600">
-        A selection of digital products,
-        interfaces and full-stack experiences.
-      </p>
+      <div class="max-w-sm lg:pb-3">
+        <p class="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          A collection of digital experiences, creative
+          interfaces and full-stack applications I've been
+          working on.
+        </p>
 
+        <div class="mt-6 flex items-center gap-3">
+          <span class="h-2 w-2 rounded-full bg-violet-500"></span>
+          <span class="text-xs font-medium text-[var(--muted)]">
+            Explore my selected projects
+          </span>
+        </div>
+      </div>
     </div>
 
-
-    <!-- List header -->
-    <div
-      class="hidden border-y border-neutral-900 py-4 lg:grid lg:grid-cols-[80px_1fr_220px_100px_40px]"
-    >
-      <span class="text-[8px] uppercase tracking-[0.25em] text-neutral-800">
-        No.
-      </span>
-
-      <span class="text-[8px] uppercase tracking-[0.25em] text-neutral-800">
-        Project
-      </span>
-
-      <span class="text-[8px] uppercase tracking-[0.25em] text-neutral-800">
-        Type
-      </span>
-
-      <span class="text-right text-[8px] uppercase tracking-[0.25em] text-neutral-800">
-        Year
-      </span>
-
-      <span></span>
+    <!-- Project showcase -->
+    <div class="border-t border-[var(--border-color)]">
+      {projects.map((project, index) => (
+        <ProjectCard
+          {...project}
+          featured={index === 0}
+          reverse={index % 2 !== 0}
+        />
+      ))}
     </div>
 
-
-    <!-- Projects -->
-    <div>
-
-      <ProjectCard
-        number="01"
-        title="Project One"
-        category="Web Application"
-        year="2026"
-        tags={["Frontend", "Full Stack", "UI"]}
-      />
-
-      <ProjectCard
-        number="02"
-        title="Project Two"
-        category="Digital Experience"
-        year="2026"
-        tags={["UI", "Animation", "Web"]}
-      />
-
-      <ProjectCard
-        number="03"
-        title="Project Three"
-        category="Full Stack Product"
-        year="2026"
-        tags={["API", "Database", "Backend"]}
-      />
-
-    </div>
-
-
-    <!-- Bottom -->
-    <div
-      class="mt-8 flex items-center justify-between border-t border-neutral-900 pt-5"
-    >
-      <span class="text-[8px] uppercase tracking-[0.3em] text-neutral-800">
-        Selected projects
+    <!-- Footer -->
+    <div class="mt-10 flex flex-wrap items-center justify-between gap-5">
+      <span class="text-xs font-medium text-[var(--muted)]">
+        More projects coming soon
       </span>
 
-      <span class="text-[8px] uppercase tracking-[0.3em] text-neutral-800">
-        03 / 03
+      <span class="font-mono text-xs text-violet-500">
+        {String(projects.length).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
       </span>
     </div>
 

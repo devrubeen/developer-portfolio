@@ -12,11 +12,20 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/vercel": "^11.0.15",
     "@tailwindcss/vite": "^4.3.3",
+    "@upstash/ratelimit": "^2.2.0",
+    "@upstash/redis": "^1.39.0",
     "astro": "^7.3.1",
-    "tailwindcss": "^4.3.3"
+    "nodemailer": "^10.1.6",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2"
   },
   "allowScripts": {
     "esbuild": true
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^8.0.2"
   }
 }

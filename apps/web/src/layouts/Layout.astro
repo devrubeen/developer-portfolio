@@ -1,3 +1,4 @@
+
 ---
 import "../styles/global.css";
 
@@ -8,7 +9,7 @@ interface Props {
 
 const {
   title = "Rubén Lora Martín — Full Stack Developer",
-  description = "Portfolio de Rubén Lora Martín, Full Stack Developer.",
+  description = "Portfolio de Rubén Lora Martín. Desarrollo web, interfaces y aplicaciones Full Stack.",
 } = Astro.props;
 ---
 
@@ -22,19 +23,32 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,560;1,9..144,450&family=Inter:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <title>{title}</title>
+
+    <script is:inline>
+      const storedTheme = localStorage.getItem("portfolio-theme");
+
+      const theme =
+        storedTheme === "light" || storedTheme === "dark"
+          ? storedTheme
+          : window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+
+      document.documentElement.classList.toggle(
+        "dark",
+        theme === "dark"
+      );
+    </script>
   </head>
 
-  <body
-    class="bg-[#121210] text-[#EDEAE3] antialiased selection:bg-[#7C8B6B] selection:text-[#121210]"
-    style="font-family: 'Inter', sans-serif;"
-  >
+  <body class="min-h-screen antialiased">
     <slot />
   </body>
 </html>

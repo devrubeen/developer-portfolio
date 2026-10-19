@@ -1,47 +1,22 @@
+
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
 import Projects from "../components/Projects.astro";
+import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
 ---
 
 <Layout>
-
   <Navbar />
 
   <main>
     <Hero />
+    <About />
     <Projects />
+    <Contact />
 
-    <section
-      id="about"
-      class="min-h-screen border-t border-neutral-900 px-6 py-32 lg:px-8"
-    >
-      <div class="mx-auto max-w-7xl">
-        <p class="text-xs uppercase tracking-[0.25em] text-neutral-600">
-          02 / About
-        </p>
-
-        <h2 class="mt-12 text-6xl font-medium tracking-[-0.06em] text-white lg:text-8xl">
-          About me.
-        </h2>
-      </div>
-    </section>
-
-    <section
-      id="contact"
-      class="min-h-screen border-t border-neutral-900 px-6 py-32 lg:px-8"
-    >
-      <div class="mx-auto max-w-7xl">
-        <p class="text-xs uppercase tracking-[0.25em] text-neutral-600">
-          03 / Contact
-        </p>
-
-        <h2 class="mt-12 text-6xl font-medium tracking-[-0.06em] text-white lg:text-8xl">
-          Let's talk.
-        </h2>
-      </div>
-    </section>
+    
   </main>
-
 </Layout>

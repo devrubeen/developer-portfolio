@@ -1,0 +1,209 @@
+
+---
+const specialties = [
+  {
+    number: "01",
+    title: "Frontend & UI",
+    description:
+      "Interfaces modernas, responsive, accesibles y cuidadas hasta el último detalle.",
+    tags: ["React", "Astro", "Tailwind CSS"],
+    icon: "◈",
+  },
+  {
+    number: "02",
+    title: "Backend & Architecture",
+    description:
+      "APIs, bases de datos y aplicaciones completas con una arquitectura organizada y escalable.",
+    tags: ["Node.js", "NestJS", "Supabase"],
+    icon: "⌘",
+  },
+];
+---
+
+<section
+  id="about"
+  class="relative isolate overflow-hidden border-t border-[var(--border-color)] bg-[var(--background)] px-6 py-28 lg:px-8 lg:py-36"
+>
+  <!-- Decorative glow -->
+  <div
+    class="pointer-events-none absolute -left-64 top-20 h-[550px] w-[550px] rounded-full bg-violet-500/[0.07] blur-[130px]"
+  ></div>
+
+  <div class="relative mx-auto max-w-7xl">
+    <!-- Heading -->
+    <div class="mb-16">
+      <div class="mb-6 flex items-center gap-3">
+        <span class="h-px w-8 bg-violet-500"></span>
+        <span class="text-xs font-semibold uppercase tracking-[0.25em] text-violet-500">
+          Get to know me
+        </span>
+      </div>
+
+      <h2 class="text-[clamp(3.5rem,7vw,7rem)] font-extrabold leading-[1.05] tracking-[-0.075em]">
+        Beyond the
+        <span class="block">
+          Code<span class="text-violet-500">.</span>
+        </span>
+      </h2>
+    </div>
+
+    <div class="grid items-start gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
+      <!-- Personal introduction -->
+      <div>
+        <div
+          class="mb-8 inline-flex items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/5 px-4 py-2 text-xs font-semibold text-violet-500"
+        >
+          <span class="h-2 w-2 rounded-full bg-violet-500"></span>
+          A little about myself
+        </div>
+
+        <h3 class="max-w-xl text-3xl font-bold leading-tight tracking-[-0.05em] sm:text-4xl">
+          I turn ideas into
+          <span class="text-violet-500">digital experiences.</span>
+        </h3>
+
+        <div class="mt-8 space-y-5 text-sm leading-8 text-[var(--muted)] sm:text-base">
+          <p>
+            Hey! I'm <strong class="font-semibold text-[var(--foreground)]">Rubén Lora Martín</strong>,
+            a Full Stack Developer who enjoys combining
+            creative interfaces with solid technical solutions.
+          </p>
+
+          <p>
+            I'm especially interested in frontend development,
+            interactive experiences and building complete
+            applications, from the interface to the API
+            and database.
+          </p>
+
+          <p>
+            I enjoy exploring new technologies, solving
+            challenging problems and continuously improving
+            the way I design and write code.
+          </p>
+        </div>
+
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a
+            href="#projects"
+            class="group inline-flex items-center gap-3 rounded-xl bg-violet-600 px-6 py-4 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-violet-700"
+          >
+            Explore my projects
+            <span class="transition-transform group-hover:translate-x-1">↗</span>
+          </a>
+
+          <a
+            href="#contact"
+            class="inline-flex items-center gap-3 rounded-xl border border-[var(--border-color)] bg-[var(--surface)] px-6 py-4 text-sm font-semibold transition duration-300 hover:-translate-y-1 hover:border-violet-500"
+          >
+            Get in touch →
+          </a>
+        </div>
+
+        <!-- Philosophy -->
+        <div class="mt-14 border-l-2 border-violet-500 pl-6">
+          <p class="text-lg font-medium italic leading-8 tracking-tight">
+            "Great digital experiences happen when design
+            and development work together."
+          </p>
+          <p class="mt-3 text-xs font-medium text-[var(--muted)]">
+            My approach to building for the web
+          </p>
+        </div>
+      </div>
+
+      <!-- Developer profile -->
+      <div class="relative">
+        <div
+          class="absolute -inset-5 rounded-[2rem] bg-violet-500/[0.05] blur-3xl"
+        ></div>
+
+        <div
+          class="relative overflow-hidden rounded-2xl border border-[var(--border-color)] bg-[var(--surface)] shadow-2xl shadow-violet-900/5"
+        >
+          <!-- Panel header -->
+          <div class="flex items-center justify-between border-b border-[var(--border-color)] px-6 py-5">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-600 font-bold text-white">
+                RL
+              </span>
+
+              <div>
+                <p class="text-sm font-bold">Developer Profile</p>
+                <p class="text-xs text-[var(--muted)]">Rubén Lora Martín</p>
+              </div>
+            </div>
+
+            <span class="font-mono text-xs text-violet-500">01 / 02</span>
+          </div>
+
+          <!-- Profile content -->
+          <div class="p-6 sm:p-8">
+            <div class="mb-8 flex items-center gap-3">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="absolute inset-0 animate-ping rounded-full bg-emerald-400 opacity-40"></span>
+                <span class="relative h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+              </span>
+
+              <span class="font-mono text-xs text-[var(--muted)]">
+                Always learning. Always building.
+              </span>
+            </div>
+
+            <div class="space-y-4">
+              {specialties.map((item) => (
+                <div
+                  class="group rounded-xl border border-[var(--border-color)] bg-[var(--background)] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/40"
+                >
+                  <div class="mb-5 flex items-center justify-between">
+                    <span class="font-mono text-xs text-violet-500">
+                      / {item.number}
+                    </span>
+
+                    <span class="text-2xl text-violet-500">{item.icon}</span>
+                  </div>
+
+                  <h4 class="text-xl font-bold tracking-tight">
+                    {item.title}
+                  </h4>
+
+                  <p class="mt-3 text-sm leading-7 text-[var(--muted)]">
+                    {item.description}
+                  </p>
+
+                  <div class="mt-5 flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <span class="rounded-lg border border-[var(--border-color)] bg-[var(--surface)] px-3 py-1.5 text-[10px] font-medium text-[var(--muted)]">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-7 flex items-center justify-between border-t border-[var(--border-color)] pt-6">
+              <span class="text-xs text-[var(--muted)]">
+                Design × Development
+              </span>
+
+              <span class="font-mono text-xs font-semibold text-violet-500">
+                FULL STACK ↗
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating accent -->
+        <div
+          class="pointer-events-none absolute -bottom-5 -right-3 hidden rounded-xl border border-[var(--border-color)] bg-[var(--surface)] px-5 py-3 shadow-xl sm:block"
+        >
+          <span class="font-mono text-xs font-semibold text-violet-500">
+            &lt;Building the future /&gt;
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

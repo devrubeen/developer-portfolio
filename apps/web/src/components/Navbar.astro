@@ -1,54 +1,107 @@
-<header class="fixed inset-x-0 top-0 z-50">
-  <nav
-    class="mx-auto flex max-w-7xl items-center justify-between px-6 py-7 lg:px-8"
-  >
-    <a
-      href="/"
-      class="group flex items-center gap-3 text-sm font-semibold tracking-[-0.05em]"
-    >
-      <span>RLM.</span>
+---
+const links = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
+---
 
-      <span
-        class="h-1.5 w-1.5 rounded-full bg-lime-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-      ></span>
+<header class="fixed inset-x-0 top-0 z-50 border-b border-[var(--border-color)] bg-[var(--background)]/90 backdrop-blur-xl">
+  <nav class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
+    <a href="#home" class="flex items-center gap-3 font-bold text-xl">
+      <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-600 text-white">
+        RL
+      </span>
+      <span>Rubén<span class="text-violet-500">.</span></span>
     </a>
 
-    <div
-      class="hidden items-center gap-10 text-[9px] uppercase tracking-[0.25em] text-neutral-600 sm:flex"
-    >
-      <a
-        href="#projects"
-        class="transition-colors duration-300 hover:text-white"
-      >
-        Projects
-      </a>
+    <div class="hidden items-center gap-8 lg:flex">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class="text-sm font-medium text-[var(--muted)] transition hover:text-violet-500"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
 
-      <a
-        href="#about"
-        class="transition-colors duration-300 hover:text-white"
+    <div class="flex items-center gap-3">
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="Cambiar tema"
+        aria-pressed="false"
+        class="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--border-color)] transition hover:border-violet-500"
       >
-        About
-      </a>
+        <span class="dark:hidden">☾</span>
+        <span class="hidden dark:inline">☀</span>
+      </button>
 
       <a
         href="#contact"
-        class="transition-colors duration-300 hover:text-white"
+        class="hidden rounded-xl bg-violet-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-violet-700 sm:inline-flex"
       >
-        Contact
+        Hire Me ↗
       </a>
-    </div>
 
-    <a
-      href="#contact"
-      class="group flex items-center gap-2 text-[9px] uppercase tracking-[0.25em] text-neutral-500"
-    >
-      <span class="hidden sm:inline">Let's talk</span>
-
-      <span
-        class="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+      <button
+        id="mobile-menu-toggle"
+        type="button"
+        class="rounded-lg border border-[var(--border-color)] px-3 py-2 lg:hidden"
+        aria-label="Abrir menú"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
       >
-        ↗
-      </span>
-    </a>
+        ☰
+      </button>
+    </div>
   </nav>
+
+  <div
+    id="mobile-menu"
+    class="hidden border-t border-[var(--border-color)] bg-[var(--background)] px-6 py-5 lg:hidden"
+  >
+    {links.map((link) => (
+      <a href={link.href} class="block py-3 text-sm font-medium">
+        {link.label}
+      </a>
+    ))}
+  </div>
 </header>
+
+<script>
+  const themeToggle = document.querySelector<HTMLButtonElement>("#theme-toggle");
+  const menuToggle = document.querySelector<HTMLButtonElement>("#mobile-menu-toggle");
+  const mobileMenu = document.querySelector<HTMLElement>("#mobile-menu");
+
+  function updateThemeButton() {
+    themeToggle?.setAttribute(
+      "aria-pressed",
+      String(document.documentElement.classList.contains("dark"))
+    );
+  }
+
+  updateThemeButton();
+
+  themeToggle?.addEventListener("click", () => {
+    const isDark = document.documentElement.classList.toggle("dark");
+    localStorage.setItem("portfolio-theme", isDark ? "dark" : "light");
+    updateThemeButton();
+  });
+
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = !mobileMenu?.classList.contains("hidden");
+    mobileMenu?.classList.toggle("hidden", isOpen);
+    menuToggle.setAttribute("aria-expanded", String(!isOpen));
+  });
+
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      menuToggle?.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>
