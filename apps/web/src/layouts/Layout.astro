@@ -50,5 +50,23 @@ const {
 
   <body class="min-h-screen antialiased">
     <slot />
+    <script>
+  import { initAnimations } from "../scripts/animations";
+
+  console.log("GSAP: script cargado");
+
+  function startAnimations() {
+    console.log("GSAP: inicializando animaciones");
+    initAnimations();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", startAnimations, {
+      once: true,
+    });
+  } else {
+    startAnimations();
+  }
+</script>
   </body>
 </html>

@@ -1,15 +1,6 @@
 
 ---
-const email = "dev.rubeen@gmail.com"; // Añade aquí tu correo profesional
-const github = "https://github.com/devrubeen";
-const linkedin = "https://www.linkedin.com/in/rub%C3%A9n-lora-mart%C3%ADn-054538216/"; // Añade aquí tu LinkedIn cuando quieras
 
-const socialLinks = [
-  { label: "GitHub", href: github },
-  { label: "LinkedIn", href: linkedin },
-].filter((link) => link.href);
-
-const year = new Date().getFullYear();
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
@@ -26,14 +17,14 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     <!-- Section heading -->
     <div class="mb-16 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
       <div>
-        <div class="mb-6 flex items-center gap-3">
+        <div data-reveal class="mb-6 flex items-center gap-3">
           <span class="h-px w-8 bg-violet-500"></span>
           <span class="text-xs font-semibold uppercase tracking-[0.25em] text-violet-500">
             Have something in mind?
           </span>
         </div>
 
-        <h2 class="text-[clamp(3.5rem,8vw,8rem)] font-extrabold leading-[1.02] tracking-[-0.08em]">
+        <h2  data-reveal class="text-[clamp(3.5rem,8vw,8rem)] font-extrabold leading-[1.02] tracking-[-0.08em]">
           Let's create
           <span class="block">
             something
@@ -44,7 +35,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         </h2>
       </div>
 
-      <p class="max-w-xs text-sm leading-8 text-[var(--muted)] sm:text-base">
+      <p data-reveal class="max-w-xs text-sm leading-8 text-[var(--muted)] sm:text-base">
         Have a project, an idea or just want to connect?
         I'm always interested in hearing about new
         opportunities and creative challenges.
@@ -53,6 +44,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     
 <!-- Contact panel -->
 <div
+  data-reveal
   class="grid gap-12 rounded-3xl border border-[var(--border-color)] bg-[var(--surface)] p-7 sm:p-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:p-14"
 >
   <!-- Left side -->
@@ -65,12 +57,12 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         </span>
       </div>
 
-      <h3 class="text-3xl font-bold leading-tight tracking-[-0.05em] sm:text-5xl">
+      <h3 data-reveal class="text-3xl font-bold leading-tight tracking-[-0.05em] sm:text-5xl">
         Tell me about
         <span class="block text-violet-500">your idea.</span>
       </h3>
 
-      <p class="mt-6 max-w-sm text-sm leading-8 text-[var(--muted)]">
+      <p data-reveal class="mt-6 max-w-sm text-sm leading-8 text-[var(--muted)]">
         Have a project in mind, a collaboration opportunity
         or just want to say hello? Fill out the form and
         your message will land directly in my inbox.
@@ -206,51 +198,6 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
   </form>
 </div>
 
-
-    <!-- Social links -->
-    <div class="grid gap-8 border-b border-[var(--border-color)] py-14 md:grid-cols-2">
-      <div>
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-violet-500">
-          Find me online
-        </p>
-
-        <p class="mt-3 text-sm text-[var(--muted)]">
-          Explore my code and connect with me.
-        </p>
-      </div>
-
-      <div class="flex flex-wrap items-center gap-4 md:justify-end">
-        {socialLinks.map((link) => (
-          <a
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group inline-flex items-center gap-3 rounded-xl border border-[var(--border-color)] bg-[var(--surface)] px-5 py-3 text-sm font-semibold transition-all duration-300 hover:-translate-y-1 hover:border-violet-500 hover:text-violet-500"
-          >
-            {link.label}
-            <span class="transition-transform group-hover:translate-x-1">↗</span>
-          </a>
-        ))}
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="flex flex-col gap-6 py-9 sm:flex-row sm:items-center sm:justify-between">
-      <a href="#home" class="text-xl font-extrabold tracking-tight">
-        Rubén<span class="text-violet-500">.</span>
-      </a>
-
-      <p class="text-xs text-[var(--muted)]">
-        © {year} Rubén Lora Martín. Built with Astro & Tailwind CSS.
-      </p>
-
-      <a
-        href="#home"
-        class="inline-flex items-center gap-2 text-xs font-semibold text-[var(--muted)] transition hover:text-violet-500"
-      >
-        Back to top ↑
-      </a>
-    </footer>
   </div>
 </section>
 

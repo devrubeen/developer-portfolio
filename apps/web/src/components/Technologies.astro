@@ -1,0 +1,208 @@
+
+---
+const categories = [
+  {
+    number: "01",
+    icon: "◈",
+    title: "Frontend & UI",
+    description:
+      "Building responsive, accessible and visually polished user interfaces.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Astro",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "HTML & CSS",
+      "Vue.js",
+      "Kotlin & Android",
+    ],
+  },
+  {
+    number: "02",
+    icon: "⌘",
+    title: "Backend & APIs",
+    description:
+      "Developing APIs, managing data and building maintainable application architectures.",
+    technologies: [
+      "Node.js",
+      "NestJS",
+      "Supabase",
+      "MySQL & PostgreSQL",
+      "MongoDB",
+      "REST APIs",
+      "Authentication",
+      "PHP & Frameworks",
+    ],
+  },
+  {
+    number: "03",
+    icon: "⌥",
+    title: "Tools & Workflow",
+    description:
+      "Using modern development tools to organize, version and deploy projects.",
+    technologies: [
+      "Git & GitHub",
+      "Github Actions",
+      "Vercel",
+      "pnpm",
+      "Turborepo",
+      "Docker & Containers",
+    ],
+  },
+  {
+    number: "04",
+    icon: "✳",
+    title: "Creative Development",
+    description:
+      "Creating interactive experiences through animation and thoughtful motion design.",
+    technologies: [
+      "GSAP",
+      "ScrollTrigger",
+      "CSS Animations",
+      "JavaScript",
+    ],
+  },
+];
+---
+
+<section
+  id="technologies"
+  class="relative isolate overflow-hidden border-t border-[var(--border-color)] bg-[var(--background)] px-6 py-28 lg:px-8 lg:py-36"
+>
+  <!-- Decorative glow -->
+  <div
+    class="pointer-events-none absolute -right-64 top-20 h-[550px] w-[550px] rounded-full bg-violet-500/[0.07] blur-[130px]"
+  ></div>
+
+  <div class="relative mx-auto max-w-7xl">
+
+    <!-- Heading -->
+    <div
+      class="mb-16 flex flex-col justify-between gap-8 lg:flex-row lg:items-end"
+    >
+      <div>
+        <div data-reveal class="mb-6 flex items-center gap-3">
+          <span class="h-px w-8 bg-violet-500"></span>
+
+          <span
+            class="text-xs font-semibold uppercase tracking-[0.25em] text-violet-500"
+          >
+            My technical toolkit
+          </span>
+        </div>
+
+        <h2
+          data-reveal
+          class="text-[clamp(3.5rem,7vw,7rem)] font-extrabold leading-[1.05] tracking-[-0.075em]"
+        >
+          Tools of the
+          <span class="block">
+            trade<span class="text-violet-500">.</span>
+          </span>
+        </h2>
+      </div>
+
+      <p
+        data-reveal
+        class="max-w-sm text-sm leading-8 text-[var(--muted)] sm:text-base"
+      >
+        The technologies and tools I use to build
+        modern interfaces, reliable applications
+        and engaging digital experiences.
+      </p>
+    </div>
+
+    <!-- Technology categories -->
+    <div class="grid gap-5 md:grid-cols-2">
+      {categories.map((category) => (
+        <article
+          data-reveal
+          class="group relative overflow-hidden rounded-2xl border border-[var(--border-color)] bg-[var(--surface)] p-7 transition-colors duration-300 hover:border-violet-500/40 sm:p-9"
+        >
+          <!-- Hover glow -->
+          <div
+            class="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full bg-violet-500/0 blur-[80px] transition-colors duration-500 group-hover:bg-violet-500/10"
+          ></div>
+
+          <div class="relative">
+            <!-- Card header -->
+            <div class="mb-10 flex items-start justify-between">
+              <div
+                class="flex h-14 w-14 items-center justify-center rounded-2xl border border-violet-500/20 bg-violet-500/10 text-3xl text-violet-500"
+              >
+                {category.icon}
+              </div>
+
+              <span
+                class="font-mono text-xs text-[var(--muted)]"
+              >
+                / {category.number}
+              </span>
+            </div>
+
+            <h3
+              class="text-2xl font-bold tracking-[-0.04em] sm:text-3xl"
+            >
+              {category.title}
+            </h3>
+
+            <p
+              class="mt-4 max-w-md text-sm leading-7 text-[var(--muted)]"
+            >
+              {category.description}
+            </p>
+
+            <div
+              class="my-8 h-px w-full bg-[var(--border-color)]"
+            ></div>
+
+            <!-- Technology tags -->
+            <div class="flex flex-wrap gap-2">
+              {category.technologies.map((technology) => (
+                <span
+                  class="rounded-lg border border-[var(--border-color)] bg-[var(--background)] px-3 py-2 text-xs font-medium transition-colors duration-300 hover:border-violet-500/40 hover:text-violet-500"
+                >
+                  {technology}
+                </span>
+              ))}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Closing statement -->
+    <div
+      data-reveal
+      class="mt-10 flex flex-col justify-between gap-6 rounded-2xl border border-violet-500/20 bg-violet-500/[0.04] p-7 sm:flex-row sm:items-center sm:p-9"
+    >
+      <div>
+        <p class="text-lg font-bold tracking-tight">
+          More than just a tech stack.
+        </p>
+
+        <p class="mt-2 max-w-2xl text-sm leading-7 text-[var(--muted)]">
+          I enjoy connecting design and development to
+          create complete digital products — from the
+          first interface to the backend architecture.
+        </p>
+      </div>
+
+      <a
+        href="#projects"
+        class="group inline-flex shrink-0 items-center gap-3 text-sm font-semibold text-violet-500"
+      >
+        See these skills in action
+
+        <span
+          class="transition-transform duration-300 group-hover:translate-x-1"
+        >
+          ↗
+        </span>
+      </a>
+    </div>
+
+  </div>
+</section>
